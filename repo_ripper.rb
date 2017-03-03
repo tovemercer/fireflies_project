@@ -1,5 +1,11 @@
 # program that creates a folder on your desktop of the repo you are looking for
 
+# things that woyld be wicked awesome:
+  # github api to use user signin
+  # dropbox api to have option to download files in dropbox
+  # option to get all the branchs from a repo
+  # scraper to search gihub for urls matching inputed repo path
+
 class Repo
 
   def initalize(args)
@@ -8,7 +14,11 @@ class Repo
     @branch_name = nil
   end
 
-  def get_yer_github
+  def drop_it_like_its_hot
+    # dropbox api to store your stuff
+  end
+
+  def git_yer_github
     # github api to sign user in
   end
 
