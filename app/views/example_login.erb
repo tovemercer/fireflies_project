@@ -1,0 +1,23 @@
+<% if @errors %>
+  <span>Something went wrong: </span>
+  <ul class="error-list">
+
+  <% @errors.each do |error| %>
+    <li class="error-item"><%= error %></li>
+  <% end %>
+
+  </ul>
+<% end %>
+
+<form action="/sessions" method="post">
+  <label for="email">Email: <label>
+  <input type="text" name="email"/>
+  <br>
+
+  <label for="password">Password: <label>
+  <input type="password" name="password"/>
+  <br>
+
+  <input type="submit" value="Login">
+</form>
+
