@@ -17,14 +17,14 @@ class Repo
     # regex takes the remaining path (to the right) with the urls matching the repo path and add  them to an array
   end
 
-  def master_branch
+  def branch_commander
     self.git_repo_array.each do |end_resource_path|
       cmd = "git clone https://github.com/#{repo_path}/#{end_resource_path}"
       value = `#{cmd}`
     end
   end
 
-  def specific_branch
+  def branch_sinper
     self.git_repo_array.each do |end_resource_path|
       cmd = "git clone -b #{self.branch_name} https://github.com/#{repo_path}/#{end_resource_path}"
       value = `#{cmd}`
@@ -34,9 +34,9 @@ class Repo
   def operation_git_repo
     # iterate throught the array to clone repos
     if self.branch_name
-      specific_branch
+      branch_sinper
     else
-      master_branch
+      branch_commander
     end
   end
 
