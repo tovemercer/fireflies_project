@@ -1,5 +1,11 @@
 # program that creates a folder on your desktop of the repo you are looking for
 
+# things that woyld be wicked awesome:
+  # github api to use user signin
+  # dropbox api to have option to download files in dropbox
+  # option to get all the branchs from a repo
+  # scraper to search gihub for urls matching inputed repo path
+
 class Repo
 
   def initalize(args)
@@ -8,7 +14,11 @@ class Repo
     @branch_name = nil
   end
 
-  def get_yer_github
+  def drop_it_like_its_hot
+    # dropbox api to store your stuff
+  end
+
+  def git_yer_github
     # github api to sign user in
   end
 
@@ -17,14 +27,14 @@ class Repo
     # regex takes the remaining path (to the right) with the urls matching the repo path and add  them to an array
   end
 
-  def master_branch
+  def branch_commander
     self.git_repo_array.each do |end_resource_path|
       cmd = "git clone https://github.com/#{repo_path}/#{end_resource_path}"
       value = `#{cmd}`
     end
   end
 
-  def specific_branch
+  def branch_sinper
     self.git_repo_array.each do |end_resource_path|
       cmd = "git clone -b #{self.branch_name} https://github.com/#{repo_path}/#{end_resource_path}"
       value = `#{cmd}`
@@ -34,9 +44,9 @@ class Repo
   def operation_git_repo
     # iterate throught the array to clone repos
     if self.branch_name
-      specific_branch
+      branch_sinper
     else
-      master_branch
+      branch_commander
     end
   end
 

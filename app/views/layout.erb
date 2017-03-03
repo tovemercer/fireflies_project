@@ -20,24 +20,7 @@
   <title></title>
 </head>
 <header>
-
-  <p>
-    <% if !logged_in? %>
-      <a href="/sessions/new">Login</a>
-      <a href="/users/new">Register</a>
-    <% else %>
-      <a href="/users/<%= current_user.id %>">My Homepage</a>
-      <br>
-      <p> Logged as: <%=current_user.email%>  </p>
-      <br>
-      <p>
-      <form method="post" action="/sessions">
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Logout" class="button">
-      </form>
-      </p>
-    <% end %>
-  </p>
+  <center><h1>Repo Ripper</h1></center>
 </header>
 <body>
   <%= yield %>
